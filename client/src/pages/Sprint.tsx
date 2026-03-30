@@ -78,7 +78,7 @@ export default function Sprint() {
               { icon: Users, title: "2 Private 1:1 Calls", desc: "60-minute implementation calls with Ryan personally. Not a VA. Not an assistant. Ryan." },
               { icon: Wrench, title: "Full System Installation", desc: "Scripts, templates, automations, CRM setup (Jobber, Housecall Pro, ServiceTitan, GoHighLevel)." },
               { icon: Clock, title: "30 Days of Direct Access", desc: "Expert guidance for the full 30 days. Ask questions, get feedback, stay on track." },
-              { icon: CheckCircle2, title: "Quote Revival Campaign", desc: "Launch the same campaign that revived 168 stalled quotes in a single weekend for the Kelley client." },
+              { icon: CheckCircle2, title: "Quote Revival Campaign", desc: "Launch the same campaign that revived 168 stalled quotes in a single weekend for a residential water filtration client." },
               { icon: Shield, title: "Satisfaction Guarantee", desc: "If you do the work and don't see results, we'll make it right. Period." },
               { icon: ArrowRight, title: "Ascension Path", desc: "Sprint graduates get priority access to Group Coaching and 1:1 Consulting as you scale." },
             ].map((item, i) => (

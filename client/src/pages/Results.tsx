@@ -49,14 +49,14 @@ export default function Results() {
         </div>
       </section>
 
-      {/* OnTrac Deep Dive */}
+      {/* Consulting Success Story */}
       <section className="py-20" style={{ backgroundColor: "#23262E" }}>
         <div className="container">
-          <div className="section-label mb-4 fade-up">Anchor Case Study</div>
+          <div className="section-label mb-4 fade-up">Consulting Success Story</div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>
               <h2 className="text-4xl font-black text-white mb-4 fade-up" style={{ letterSpacing: "-0.03em" }}>
-                OnTrac Garage Doors
+                Local Garage Door Company
               </h2>
               <div className="flex items-center gap-4 mb-6 fade-up">
                 <div className="text-center">
@@ -70,9 +70,9 @@ export default function Results() {
                 </div>
               </div>
               <p className="text-white/60 leading-relaxed mb-5 fade-up">
-                OnTrac Garage Doors is the anchor case study and the standard everything else
-                is measured against. A founder-led garage door company that was doing $40K in
-                profit implemented the full SOS framework and grew to $1.4M.
+                This consulting success story is the standard everything else is measured against.
+                A founder-led garage door company that was doing $40K in profit implemented the
+                full SOS framework and grew to $1.4M.
               </p>
               <p className="text-white/60 leading-relaxed mb-5 fade-up">
                 This wasn't a marketing win. It wasn't more leads. It was a conversion system —
@@ -99,7 +99,7 @@ export default function Results() {
         </div>
       </section>
 
-      {/* Kelley Case Study */}
+      {/* Quote Revival Campaign */}
       <section className="py-20">
         <div className="container">
           <div className="section-label mb-4 fade-up">Quote Revival Campaign</div>
@@ -120,7 +120,7 @@ export default function Results() {
 
             <div>
               <h2 className="text-4xl font-black text-white mb-4 fade-up" style={{ letterSpacing: "-0.03em" }}>
-                The Kelley Case Study
+                Residential Water Filtration
               </h2>
               <p className="text-white/60 leading-relaxed mb-5 fade-up">
                 168 stalled quotes revived in a single weekend. This is the proof of concept

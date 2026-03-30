@@ -149,17 +149,7 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#1C1E24] to-transparent" />
       </section>
 
-      {/* ─── PROOF STATS BAR ──────────────────────────────────── */}
-      <section className="py-16 border-y border-white/5" style={{ backgroundColor: "#23262E" }}>
-        <div className="container">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
-            <StatCounter value={1400000} suffix="+" label="Profit Growth — OnTrac" />
-            <StatCounter value={168} suffix="" label="Stalled Quotes Revived in a Weekend" />
-            <StatCounter value={30} suffix=" Days" label="Sprint to System" />
-            <StatCounter value={997} suffix="" label="Sprint Investment" />
-          </div>
-        </div>
-      </section>
+
 
       {/* ─── PROBLEM SECTION ──────────────────────────────────── */}
       <section className="py-24 relative overflow-hidden">
@@ -285,7 +275,7 @@ export default function Home() {
                   step: "05",
                   label: "WHERE YOU'RE GOING",
                   title: "Predictable Scale",
-                  desc: "Owner out of every deal. Team running the pipeline. Revenue tied to system, not season. Like OnTrac.",
+                  desc: "Owner out of every deal. Team running the pipeline. Revenue tied to system, not season.",
                   color: "#FF7900",
                   bg: "rgba(255,121,0,0.1)",
                   border: "rgba(255,121,0,0.3)",
@@ -384,7 +374,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* OnTrac Case Study */}
+              {/* Consulting Success Story */}
             <div
               className="rounded-2xl overflow-hidden fade-up"
               style={{ border: "1px solid rgba(255,121,0,0.2)" }}
@@ -400,8 +390,8 @@ export default function Home() {
                 <div className="absolute inset-0 bg-[#1C1E24]/60" />
               </div>
               <div className="p-8" style={{ backgroundColor: "#2A2D36" }}>
-                <div className="section-label mb-3">Anchor Case Study</div>
-                <h3 className="text-2xl font-black text-white mb-2">OnTrac Garage Doors</h3>
+                <div className="section-label mb-3">Consulting Success Story</div>
+                <h3 className="text-2xl font-black text-white mb-2">Local Garage Door Company</h3>
                 <div className="flex items-baseline gap-3 mb-4">
                   <span className="text-white/40 text-sm line-through">$40K</span>
                   <ArrowRight size={14} style={{ color: "#FF7900" }} />
@@ -426,7 +416,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Kelley Case Study */}
+            {/* Quote Revival Campaign */}
             <div
               className="rounded-2xl overflow-hidden fade-up"
               style={{ border: "1px solid rgba(70,130,180,0.2)", backgroundColor: "#2A2D36" }}
@@ -449,7 +439,7 @@ export default function Home() {
               </div>
               <div className="p-8">
                 <div className="section-label mb-3">Quote Revival Campaign</div>
-                <h3 className="text-2xl font-black text-white mb-2">The Kelley Case Study</h3>
+                <h3 className="text-2xl font-black text-white mb-2">Residential Water Filtration</h3>
                 <p className="text-white/60 text-sm leading-relaxed mb-5">
                   168 stalled quotes revived in a single weekend using the Quote Revival Campaign
                   inside the Sprint. This is the proof of concept for what's possible when you
@@ -694,7 +684,7 @@ export default function Home() {
 
               <div className="grid grid-cols-2 gap-4 mb-8 fade-up">
                 {[
-                  { icon: TrendingUp, label: "$1.4M", desc: "Profit growth — OnTrac" },
+                  { icon: TrendingUp, label: "$1.4M", desc: "Consulting success story" },
                   { icon: Users, label: "470+", desc: "Podcast episodes" },
                   { icon: Clipboard, label: "90-Day", desc: "Engagement cycles" },
                   { icon: BarChart3, label: "2 Verticals", desc: "Trades & Insurance" },
