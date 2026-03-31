@@ -124,14 +124,7 @@ export default function Home() {
                 Start the 30-Day Sprint — $997
                 <ArrowRight size={18} />
               </a>
-              <a
-                href="https://coach.ryanjamesmiller.com/Pipeline-Power-System-Scorecard"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="sos-ghost-btn px-8 py-4 rounded text-base font-semibold flex items-center justify-center gap-2"
-              >
-                Get the Free Scorecard
-              </a>
+
             </div>
 
             <p className="text-white/40 text-sm mt-5 fade-up">
@@ -729,14 +722,7 @@ export default function Home() {
               Start the 30-Day Sprint — $997
               <ArrowRight size={18} />
             </a>
-            <a
-              href="https://coach.ryanjamesmiller.com/Pipeline-Power-System-Scorecard"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="sos-ghost-btn px-10 py-5 rounded text-base font-semibold flex items-center justify-center gap-2"
-            >
-              Get the Free Scorecard First
-            </a>
+
           </div>
         </div>
       </section>
