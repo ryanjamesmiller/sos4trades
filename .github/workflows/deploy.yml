@@ -48,6 +48,8 @@ jobs:
           VITE_FRONTEND_FORGE_API_KEY: ""
           VITE_FRONTEND_FORGE_API_URL: ""
           VITE_OAUTH_PORTAL_URL: ""
+          NODE_ENV: "production"
+          GITHUB_PAGES: "true"
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
