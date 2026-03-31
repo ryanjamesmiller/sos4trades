@@ -64,6 +64,44 @@ export default function Sprint() {
         </div>
       </section>
 
+      {/* ─── VIDEO WALKTHROUGH ─────────────────────────────── */}
+      <section className="py-20" style={{ backgroundColor: "#13151A" }}>
+        <div className="container">
+          <div className="text-center mb-10">
+            <div className="section-label mb-4 fade-up">See It In Action</div>
+            <h2
+              className="text-3xl md:text-4xl font-black text-white fade-up"
+              style={{ letterSpacing: "-0.03em" }}
+            >
+              Watch the Sprint Walkthrough
+            </h2>
+            <p className="text-white/50 text-base mt-3 fade-up">
+              Ryan walks you through exactly what gets built, how it works, and what to expect.
+            </p>
+          </div>
+          <div className="fade-up max-w-4xl mx-auto">
+            <div
+              className="relative w-full rounded-2xl overflow-hidden"
+              style={{
+                paddingBottom: "56.25%",
+                border: "1px solid rgba(255,255,255,0.08)",
+                boxShadow: "0 24px 64px rgba(0,0,0,0.5)",
+              }}
+            >
+              <iframe
+                className="absolute inset-0 w-full h-full"
+                src="https://www.youtube.com/embed/0XgFwECWfMM?si=Ktbcb6y6XEdtKBwF"
+                title="SOS Quote Conversion Sprint — Product Walkthrough"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* What's Included */}
       <section className="py-20" style={{ backgroundColor: "#23262E" }}>
         <div className="container">
