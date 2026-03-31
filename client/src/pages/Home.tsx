@@ -11,11 +11,6 @@ import {
   ArrowRight,
   CheckCircle2,
   XCircle,
-  TrendingUp,
-  Users,
-  Clipboard,
-  BarChart3,
-  Wrench,
   ChevronRight,
 } from "lucide-react";
 
@@ -89,7 +84,7 @@ export default function Home() {
       <section
         className="relative min-h-screen flex items-center overflow-hidden"
         style={{
-          backgroundImage: `url(https://d2xsxph8kpxj0f.cloudfront.net/106943050/ckBSY4wLs96BZ2LvuKj6yL/sos-hero-bg-E83UUkVzjA6HVXw2BJNSSV.webp)`,
+          backgroundImage: `url(https://d2xsxph8kpxj0f.cloudfront.net/106943050/ckBSY4wLs96BZ2LvuKj6yL/jRpX3Zho2UUX_5b167da8.jpg)`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -557,7 +552,7 @@ export default function Home() {
                 build a world-class sales engine. 90-day done-with-you engagement. Full SOS
                 playbook, implemented pipeline, trained sales team.
               </p>
-              <div className="text-2xl font-black text-white mb-2">$30K+</div>
+              <div className="text-2xl font-black text-white mb-2">Scoped Per Client</div>
               <p className="text-white/30 text-xs mb-6">90-day engagement</p>
               <Link
                 href="/about"
@@ -684,26 +679,6 @@ export default function Home() {
                 follower of Christ, husband, and father first.
               </p>
 
-              <div className="grid grid-cols-2 gap-4 mb-8 fade-up">
-                {[
-                  { icon: TrendingUp, label: "$1.4M", desc: "Consulting success story" },
-                  { icon: Users, label: "470+", desc: "Podcast episodes" },
-                  { icon: Clipboard, label: "90-Day", desc: "Engagement cycles" },
-                  { icon: BarChart3, label: "2 Verticals", desc: "Trades & Insurance" },
-                ].map((item, i) => (
-                  <div
-                    key={i}
-                    className="p-4 rounded-xl flex items-start gap-3"
-                    style={{ backgroundColor: "#2A2D36", border: "1px solid rgba(255,255,255,0.05)" }}
-                  >
-                    <item.icon size={18} style={{ color: "#4682B4", flexShrink: 0, marginTop: 2 }} />
-                    <div>
-                      <div className="text-white font-bold text-sm">{item.label}</div>
-                      <div className="text-white/40 text-xs">{item.desc}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
 
               <Link
                 href="/about"
@@ -716,34 +691,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── POSITIONING STATEMENTS ───────────────────────────── */}
-      <section className="py-20" style={{ backgroundColor: "#13151A" }}>
-        <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px" style={{ backgroundColor: "rgba(255,255,255,0.05)" }}>
-            {[
-              "Most coaches sell more leads. We sell close rates.",
-              "This isn't a course. This isn't a PDF. This is installation.",
-              "The revenue is already in your pipeline — you just don't have a system to get it out.",
-              "We built this for the trades — not adapted from a corporate model.",
-              "Structure. Optimize. Scale.",
-              "Sales is stewardship, not manipulation.",
-            ].map((quote, i) => (
-              <div
-                key={i}
-                className="p-8 fade-up"
-                style={{ backgroundColor: "#13151A" }}
-              >
-                <div
-                  className="text-2xl font-bold leading-snug"
-                  style={{ color: i % 2 === 0 ? "#F5F7F8" : "#4682B4", letterSpacing: "-0.02em" }}
-                >
-                  "{quote}"
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* ─── FINAL CTA ────────────────────────────────────────── */}
       <section
