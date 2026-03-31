@@ -10,11 +10,9 @@ import About from "./pages/About";
 import Community from "./pages/Community";
 import Results from "./pages/Results";
 
-const BASE = import.meta.env.BASE_URL?.replace(/\/$/, "") ?? "";
-
 function Router() {
   return (
-    <WouterRouter base={BASE}>
+    <WouterRouter base="">
       <Switch>
         <Route path="/" component={Home} />
         <Route path="/sprint" component={Sprint} />
