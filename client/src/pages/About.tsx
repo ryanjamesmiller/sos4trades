@@ -56,21 +56,23 @@ export default function About() {
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div
-              className="rounded-2xl overflow-hidden fade-up"
+              className="relative rounded-2xl overflow-hidden fade-up"
               style={{
-                backgroundImage: `url(https://d2xsxph8kpxj0f.cloudfront.net/106943050/ckBSY4wLs96BZ2LvuKj6yL/sos-ryan-bg-M9XYJJprMcbP6J9GmMzoXo.webp)`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
                 minHeight: 480,
                 border: "1px solid rgba(70,130,180,0.2)",
               }}
             >
-              <div className="h-full min-h-[480px] flex items-end p-8">
-                <div>
-                  <div className="text-2xl font-black text-white mb-1">Ryan James Miller</div>
-                  <div className="text-[#4682B4] text-sm font-semibold">Faith-Driven Sales Strategist</div>
-                  <div className="text-white/40 text-xs mt-1">Founder, SOS — Sales Operating System</div>
-                </div>
+              <img
+                src="https://d2xsxph8kpxj0f.cloudfront.net/106943050/ckBSY4wLs96BZ2LvuKj6yL/55611B66-D6EE-445E-B076-CA5A354237D1_502687a4.jpeg"
+                alt="Ryan James Miller"
+                className="w-full h-full object-cover object-top"
+                style={{ minHeight: 480 }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1C1E24] via-transparent to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-8">
+                <div className="text-2xl font-black text-white mb-1">Ryan James Miller</div>
+                <div className="text-[#4682B4] text-sm font-semibold">Faith-Driven Sales Strategist</div>
+                <div className="text-white/40 text-xs mt-1">Founder, SOS — Sales Operating System</div>
               </div>
             </div>
 

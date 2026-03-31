@@ -144,6 +144,122 @@ export default function Results() {
         </div>
       </section>
 
+      {/* ─── TESTIMONIALS ─────────────────────────────────── */}
+      <section className="py-24" style={{ backgroundColor: "#1C1E24" }}>
+        <div className="container">
+          <div className="text-center mb-16">
+            <div className="section-label mb-4 fade-up">What Clients Say</div>
+            <h2
+              className="text-4xl font-black text-white fade-up"
+              style={{ letterSpacing: "-0.03em" }}
+            >
+              Straight From the People in the Room
+            </h2>
+          </div>
+
+          {/* Featured testimonial — Paul Shibley */}
+          <div
+            className="p-10 rounded-2xl mb-10 fade-up"
+            style={{
+              backgroundColor: "#23262E",
+              border: "1px solid rgba(70,130,180,0.25)",
+              boxShadow: "0 0 40px rgba(70,130,180,0.06)",
+            }}
+          >
+            <div
+              className="text-3xl font-black text-white/10 mb-4 leading-none"
+              style={{ fontFamily: "Georgia, serif", fontSize: 64 }}
+            >
+              &ldquo;
+            </div>
+            <p className="text-white/80 text-lg leading-relaxed mb-8 italic" style={{ marginTop: -24 }}>
+              You are a BIG breath of fresh air for our old business. We needed new perspective and advice,
+              and you provided that with a clear roadmap forward. Your guidance helped our leadership define
+              what truly matters for the business, customers, and employees, allowing us to refocus on core
+              priorities. You have an incredible ability to cut through the noise and get to the heart of
+              issues. The accountability you bring helps refine not just operations, but also realigns our
+              people with our central purpose. Your coaching balances big-picture vision with practical,
+              actionable steps. You challenge us to think differently, avoid shiny distractions, yet also
+              roll up your sleeves to drive real change. The positive impact on our culture, morale and
+              future of the business cannot be overstated. Your authenticity, empathy, and passion for
+              helping companies reach their potential is truly inspiring. Thank you for making our business
+              more than better.
+            </p>
+            <div className="flex items-center gap-4">
+              <div
+                className="w-10 h-10 rounded-full flex items-center justify-center text-white font-black text-sm flex-shrink-0"
+                style={{ backgroundColor: "#4682B4" }}
+              >
+                PS
+              </div>
+              <div>
+                <div className="text-white font-bold text-sm">Paul Shibley</div>
+                <div className="text-white/40 text-xs">President</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Grid testimonials */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              {
+                quote:
+                  "You have given us sound council on how to make our firm better and have proven yourself to be a trustworthy business partner for us. We are so glad that you can speak strategy with our team and have led us in the area of sales/marketing.",
+                name: "Ben Conner",
+                title: "CEO",
+                initials: "BC",
+              },
+              {
+                quote:
+                  "You have made our business better by challenging the norms and the voice of our business development, account management, and marketing teams. Hearing it from someone who is not part of our company, instead of someone within, yet with industry knowledge provides a completely different perspective to the teams. For me, you have made my job better by reminding me of things forgotten and nudging me to drive the team in the right direction. I know that I, and the team, appreciate your candor, conviction, direct approach, and honest feedback.",
+                name: "Dave Parker",
+                title: "VP of Sales and Marketing",
+                initials: "DP",
+              },
+              {
+                quote:
+                  "Can't speak highly enough of the pivotal role you played at a critical moment in my journey. When I was on the verge of giving up, your authentic guidance and actionable advice not only helped me combat imposter syndrome but also instilled a newfound sense of direction and purpose in my approach to leadership and business management. Your emphasis on effective time management, building strong relationships, setting aligned goals, intrinsic motivation, resilience, understanding clients, listening, and focusing on outcomes has been transformative. I'm truly grateful for your mentorship — your impact has been a game-changer for me.",
+                name: "Joel Daniels",
+                title: "CEO",
+                initials: "JD",
+              },
+              {
+                quote:
+                  "You have shown me a path on how I can step away from the office and grow our technicians/installers to the highest quality possible.",
+                name: "Kyle Colton",
+                title: "VP of Operations",
+                initials: "KC",
+              },
+            ].map((t, i) => (
+              <div
+                key={i}
+                className="p-8 rounded-xl fade-up"
+                style={{
+                  backgroundColor: "#2A2D36",
+                  border: "1px solid rgba(255,255,255,0.06)",
+                }}
+              >
+                <p className="text-white/70 text-sm leading-relaxed italic mb-6">
+                  &ldquo;{t.quote}&rdquo;
+                </p>
+                <div className="flex items-center gap-3">
+                  <div
+                    className="w-9 h-9 rounded-full flex items-center justify-center text-white font-black text-xs flex-shrink-0"
+                    style={{ backgroundColor: "rgba(70,130,180,0.25)", border: "1px solid rgba(70,130,180,0.4)" }}
+                  >
+                    {t.initials}
+                  </div>
+                  <div>
+                    <div className="text-white font-bold text-sm">{t.name}</div>
+                    <div className="text-white/40 text-xs">{t.title}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-20" style={{ backgroundColor: "#13151A" }}>
         <div className="container text-center">
