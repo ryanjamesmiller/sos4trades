@@ -42,7 +42,6 @@ export default function Footer() {
                 { href: "/about", label: "About Ryan" },
                 { href: "/results", label: "Results" },
                 { href: "/community", label: "Community" },
-                { href: "/resources", label: "Free Resources" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link

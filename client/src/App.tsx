@@ -9,7 +9,6 @@ import Sprint from "./pages/Sprint";
 import About from "./pages/About";
 import Community from "./pages/Community";
 import Results from "./pages/Results";
-import Resources from "./pages/Resources";
 
 function Router() {
   return (
@@ -19,7 +18,6 @@ function Router() {
       <Route path="/about" component={About} />
       <Route path="/community" component={Community} />
       <Route path="/results" component={Results} />
-      <Route path="/resources" component={Resources} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>

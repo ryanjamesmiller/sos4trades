@@ -554,12 +554,14 @@ export default function Home() {
               </p>
               <div className="text-2xl font-black text-white mb-2">Scoped Per Client</div>
               <p className="text-white/30 text-xs mb-6">90-day engagement</p>
-              <Link
-                href="/about"
-                className="sos-ghost-btn px-6 py-3 rounded text-sm font-bold text-center block"
+              <a
+                href="https://calendly.com/ryanjamesmiller/sos-discovery-call"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="sos-orange-btn px-6 py-3 rounded text-sm font-bold text-center block"
               >
-                Learn More
-              </Link>
+                Book a Discovery Call
+              </a>
             </div>
           </div>
         </div>
