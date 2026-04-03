@@ -42,6 +42,7 @@ export default function Footer() {
                 { href: "/about", label: "About Ryan" },
                 { href: "/results", label: "Results" },
                 { href: "/community", label: "Community" },
+                { href: "/resources", label: "Resources" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link
@@ -84,7 +85,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-white/30 text-xs">
-            © {new Date().getFullYear()} SOS — Sales Operating System. All rights reserved.
+            © {new Date( ).getFullYear()} SOS — Sales Operating System. All rights reserved.
           </p>
           <p className="text-white/20 text-xs">
             Ryan James Miller · Faith-Driven Sales Strategist
