@@ -2,7 +2,7 @@
  * Resources Page — SOS CTE
  * Design: Dark graphite (#1C1E24) base, Steel Blue (#4682B4) accents, Orange (#E8622A) CTAs
  * Typography: DM Sans — heavy display headings, clean body
- * Layout: Hero → YouTube playlist embed → What's Inside grid → CTA
+ * Layout: Hero → 4 Recent Videos → Full Playlist Embed → What's Inside grid → CTA
  */
 
 import { useEffect } from "react";
@@ -25,6 +25,29 @@ function useScrollReveal() {
     return () => observer.disconnect();
   }, []);
 }
+
+const recentVideos = [
+  {
+    id: "TyMjEz8xQKU",
+    title: "How to Keep The Promise That Turns Stalled Quotes Into Booked Jobs",
+    duration: "20:12",
+  },
+  {
+    id: "JGq1oW9QpRM",
+    title: "52 Open Quotes. $250K Sitting There. The Weekly Rhythm That Finally Closes Them",
+    duration: "23:26",
+  },
+  {
+    id: "0XgFwECWfMM",
+    title: "30-Day SOS Quote Conversion Sprint | Stop Losing Jobs You've Already Quoted",
+    duration: "10:58",
+  },
+  {
+    id: "M7f0qME21dw",
+    title: "The Quote Delivery Mistake Costing Contractors Thousands",
+    duration: "25:47",
+  },
+];
 
 export default function Resources() {
   useScrollReveal();
@@ -60,14 +83,105 @@ export default function Resources() {
         </div>
       </section>
 
-      {/* Playlist Embed */}
+      {/* Most Recent Videos */}
       <section className="py-14 px-4">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-10">
+            <p
+              className="text-xs font-bold tracking-[0.2em] uppercase mb-3 fade-up"
+              style={{ color: "#4682B4" }}
+            >
+              Latest Drops
+            </p>
+            <h2
+              className="text-3xl md:text-4xl font-black text-white fade-up"
+              style={{ letterSpacing: "-0.03em" }}
+            >
+              Most Recent Videos
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {recentVideos.map((video ) => (
+              <a
+                key={video.id}
+                href={`https://www.youtube.com/watch?v=${video.id}&list=${playlistId}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block rounded-xl overflow-hidden fade-up"
+                style={{
+                  border: "1px solid rgba(255,255,255,0.07 )",
+                  backgroundColor: "#13151A",
+                  transition: "border-color 0.2s, transform 0.2s",
+                }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(70,130,180,0.4)";
+                  (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-2px)";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(255,255,255,0.07)";
+                  (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(0)";
+                }}
+              >
+                <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+                  <img
+                    src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`}
+                    alt={video.title}
+                    className="absolute top-0 left-0 w-full h-full object-cover"
+                    onError={(e ) => {
+                      (e.currentTarget as HTMLImageElement).src = `https://img.youtube.com/vi/${video.id}/hqdefault.jpg`;
+                    }}
+                  />
+                  <div
+                    className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+                    style={{ backgroundColor: "rgba(0,0,0,0.45 )" }}
+                  >
+                    <div
+                      className="w-14 h-14 rounded-full flex items-center justify-center"
+                      style={{ backgroundColor: "#E8622A" }}
+                    >
+                      <Play className="w-6 h-6 text-white ml-1" fill="white" />
+                    </div>
+                  </div>
+                  <span
+                    className="absolute bottom-2 right-2 text-xs font-bold px-2 py-0.5 rounded"
+                    style={{ backgroundColor: "rgba(0,0,0,0.8)", color: "#fff" }}
+                  >
+                    {video.duration}
+                  </span>
+                </div>
+                <div className="p-4">
+                  <p className="text-white font-semibold text-sm leading-snug group-hover:text-[#4682B4] transition-colors">
+                    {video.title}
+                  </p>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Full Playlist Embed */}
+      <section className="py-14 px-4" style={{ backgroundColor: "#13151A" }}>
         <div className="max-w-5xl mx-auto fade-up">
+          <div className="text-center mb-10">
+            <p
+              className="text-xs font-bold tracking-[0.2em] uppercase mb-3"
+              style={{ color: "#4682B4" }}
+            >
+              Full Library
+            </p>
+            <h2
+              className="text-3xl md:text-4xl font-black text-white"
+              style={{ letterSpacing: "-0.03em" }}
+            >
+              Browse the Full Playlist
+            </h2>
+          </div>
           <div
             className="relative w-full rounded-2xl overflow-hidden shadow-2xl"
             style={{
               paddingBottom: "56.25%",
-              border: "1px solid rgba(255,255,255,0.08 )",
+              border: "1px solid rgba(255,255,255,0.08)",
               boxShadow: "0 0 60px rgba(70,130,180,0.12)",
             }}
           >
@@ -81,7 +195,6 @@ export default function Resources() {
               allowFullScreen
             />
           </div>
-
           <div className="mt-5 flex flex-col sm:flex-row items-center justify-between gap-3">
             <div className="flex items-center gap-2 text-white/40 text-sm">
               <Play className="w-4 h-4 flex-shrink-0" style={{ color: "#E8622A" }} />
@@ -105,7 +218,7 @@ export default function Resources() {
       </section>
 
       {/* What's Inside */}
-      <section className="py-14 px-4" style={{ backgroundColor: "#13151A" }}>
+      <section className="py-14 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <p
@@ -140,7 +253,7 @@ export default function Resources() {
                 key={item.title}
                 className="p-6 rounded-xl fade-up transition-colors"
                 style={{
-                  backgroundColor: "#1C1E24",
+                  backgroundColor: "#13151A",
                   border: "1px solid rgba(255,255,255,0.07)",
                 }}
                 onMouseEnter={(e) =>
@@ -159,7 +272,7 @@ export default function Resources() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 px-4">
+      <section className="py-16 px-4" style={{ backgroundColor: "#13151A" }}>
         <div className="max-w-3xl mx-auto text-center">
           <h2
             className="text-3xl md:text-4xl font-black text-white mb-4 fade-up"
