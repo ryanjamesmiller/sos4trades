@@ -63,7 +63,7 @@ export default function About() {
               }}
             >
               <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/106943050/ckBSY4wLs96BZ2LvuKj6yL/55611B66-D6EE-445E-B076-CA5A354237D1_502687a4.jpeg"
+                src="/assets/ryan-miller-headshot.jpg"
                 alt="Ryan James Miller"
                 className="w-full h-full object-cover object-top"
                 style={{ minHeight: 480 }}
@@ -157,17 +157,15 @@ export default function About() {
             Ready to Work with Ryan?
           </h2>
           <p className="text-white/50 text-lg mb-8 max-w-xl mx-auto fade-up">
-            Start with the Sprint or jump straight to 1:1 consulting if you're at $1M+ and ready to build a world-class sales engine.
+            Start with the Full Capture Scorecard, or review the results if you want to see what the SOS framework produces in the field.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center fade-up">
-            <a
-              href="https://coach.ryanjamesmiller.com/offers/zruPZzFM/checkout"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/scorecard"
               className="sos-orange-btn px-8 py-4 rounded text-sm font-bold inline-flex items-center gap-2"
             >
-              Start the Sprint — $997 <ArrowRight size={16} />
-            </a>
+              Take the Full Capture Scorecard <ArrowRight size={16} />
+            </Link>
             <Link
               href="/results"
               className="sos-ghost-btn px-8 py-4 rounded text-sm font-semibold inline-flex items-center gap-2"

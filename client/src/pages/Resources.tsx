@@ -39,7 +39,7 @@ const recentVideos = [
   },
   {
     id: "0XgFwECWfMM",
-    title: "30-Day SOS Quote Conversion Sprint | Stop Losing Jobs You've Already Quoted",
+    title: "The SOS Quote Conversion System | Stop Losing Jobs You've Already Quoted",
     duration: "10:58",
   },
   {
@@ -281,13 +281,13 @@ export default function Resources() {
             Ready to Install the System?
           </h2>
           <p className="text-white/50 text-lg mb-8 fade-up">
-            The videos give you the framework. The Sprint gives you the installation.
-            Start the 30-Day Sprint and have a working sales system in 30 days.
+            The videos give you the framework. The Full Capture Scorecard shows you exactly
+            where to apply it first.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center fade-up">
-            <Link href="/sprint">
+            <Link href="/scorecard">
               <button
-                className="font-bold px-8 py-4 rounded-lg text-lg transition-colors text-white"
+                className="type-button px-8 py-4 rounded-lg transition-colors text-white"
                 style={{ backgroundColor: "#E8622A" }}
                 onMouseEnter={(e) =>
                   ((e.currentTarget as HTMLButtonElement).style.backgroundColor = "#d4561f")
@@ -296,7 +296,7 @@ export default function Resources() {
                   ((e.currentTarget as HTMLButtonElement).style.backgroundColor = "#E8622A")
                 }
               >
-                Start the Sprint — $997
+                Take the Full Capture Scorecard
               </button>
             </Link>
             <a

@@ -1,3 +1,8 @@
+/* =============================================================
+   SOS CTE Application Shell — Steel & Signal Design System
+   Preserve graphite surfaces, steel-blue system cues, orange CTAs,
+   and the exact live-site page shell across every route.
+   ============================================================= */
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
@@ -10,6 +15,7 @@ import About from "./pages/About";
 import Community from "./pages/Community";
 import Results from "./pages/Results";
 import Resources from "./pages/Resources";
+import Scorecard from "./pages/Scorecard";
 
 function Router() {
   return (
@@ -21,6 +27,7 @@ function Router() {
         <Route path="/community" component={Community} />
         <Route path="/results" component={Results} />
         <Route path="/resources" component={Resources} />
+        <Route path="/scorecard" component={Scorecard} />
         <Route path="/404" component={NotFound} />
         <Route component={NotFound} />
       </Switch>

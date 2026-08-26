@@ -10,7 +10,7 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/results", label: "Results" },
-  { href: "/community", label: "Community" },
+  { href: "/scorecard", label: "Scorecard" },
   { href: "/resources", label: "Resources" },
 ];
 
@@ -39,7 +39,7 @@ export default function Navbar() {
     >
       <div className="container flex items-center justify-between h-16 md:h-20">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5 group">
+        <Link href="/" className="group">
           <div className="flex flex-col leading-none">
             <span
               className="text-2xl font-black tracking-tight"
@@ -76,10 +76,10 @@ export default function Navbar() {
         {/* CTA */}
         <div className="hidden md:flex items-center gap-3">
           <Link
-            href="/sprint"
+            href="/scorecard"
             className="sos-orange-btn px-5 py-2.5 rounded text-sm font-bold"
           >
-            Start the Sprint — $997
+            Take the Scorecard
           </Link>
         </div>
 
@@ -108,10 +108,10 @@ export default function Navbar() {
             </Link>
           ))}
           <Link
-            href="/sprint"
+            href="/scorecard"
             className="sos-orange-btn px-5 py-3 rounded text-sm font-bold text-center mt-2"
           >
-            Start the Sprint — $997
+            Take the Scorecard
           </Link>
         </div>
       )}

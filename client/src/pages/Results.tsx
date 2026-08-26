@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ArrowRight, TrendingUp, CheckCircle2 } from "lucide-react";
+import { Link } from "wouter";
 
 function useScrollReveal() {
   useEffect(() => {
@@ -49,96 +50,168 @@ export default function Results() {
         </div>
       </section>
 
-      {/* Consulting Success Story */}
+      {/* Case Study 01 — Local Garage Door Company */}
       <section className="py-20" style={{ backgroundColor: "#23262E" }}>
         <div className="container">
-          <div className="section-label mb-4 fade-up">Consulting Success Story</div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <div className="section-label mb-4 fade-up">Case Study 01 · Local Garage Door Company</div>
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:items-start">
             <div>
-              <h2 className="text-4xl font-black text-white mb-4 fade-up" style={{ letterSpacing: "-0.03em" }}>
-                Local Garage Door Company
+              <h2 className="mb-6 text-white fade-up">
+                They Forgot. <span style={{ color: "#FF7900" }}>Not Gone.</span>
               </h2>
-              <div className="flex items-center gap-4 mb-6 fade-up">
-                <div className="text-center">
-                  <div className="text-2xl font-black text-white/40">$40K</div>
-                  <div className="text-white/30 text-xs">Starting Profit</div>
-                </div>
-                <TrendingUp size={28} style={{ color: "#FF7900" }} />
-                <div className="text-center">
-                  <div className="text-4xl font-black" style={{ color: "#FF7900" }}>$1.4M</div>
-                  <div className="text-white/50 text-xs">Profit Growth</div>
-                </div>
+
+              <div className="mb-8 grid grid-cols-3 overflow-hidden border border-white/10 bg-[#1C1E24] fade-up">
+                {[
+                  { value: "280+", label: "Dead quotes" },
+                  { value: "$52K", label: "Revenue recovered" },
+                  { value: "30", label: "Days" },
+                ].map((stat) => (
+                  <div key={stat.label} className="border-r border-white/10 p-4 text-center last:border-r-0 sm:p-6">
+                    <div className="text-2xl font-black text-white sm:text-3xl">{stat.value}</div>
+                    <div className="mt-1 text-xs font-bold uppercase tracking-[0.12em] text-white/35">{stat.label}</div>
+                  </div>
+                ))}
               </div>
-              <p className="text-white/60 leading-relaxed mb-5 fade-up">
-                This consulting success story is the standard everything else is measured against.
-                A founder-led garage door company that was doing $40K in profit implemented the
-                full SOS framework and grew to $1.4M.
-              </p>
-              <p className="text-white/60 leading-relaxed mb-5 fade-up">
-                This wasn't a marketing win. It wasn't more leads. It was a conversion system —
-                a documented sales process, a follow-up engine, and a team that could run it
-                without the owner in every deal.
-              </p>
-              <p className="text-white/60 leading-relaxed fade-up">
-                That's what SOS does. It takes the revenue that's already in your pipeline
-                and builds a system to capture it.
-              </p>
+
+              <div className="space-y-5 fade-up">
+                <p className="text-white/60 leading-relaxed">
+                  A founder-led local garage door company had well over 280 dead quotes sitting in its system. These weren't new leads gone cold. They were jobs the team had already bid and already earned the right to close—quotes that had simply gone quiet with no structured follow-up behind them.
+                </p>
+                <p className="text-white/60 leading-relaxed">
+                  Nothing was wrong with the leads or the pitch. The real issue was the <strong className="text-white">Field-to-Office Gap</strong>: strong field work with no office system to keep a quote alive after the homeowner went quiet. The team was reactive to the customer's communication instead of proactive with its own.
+                </p>
+                <p className="text-white/60 leading-relaxed">
+                  SOS installed a seven-touch follow-up sequence with specific timing, specific scripts, and three channels—call, text, and email. Then Ryan spent one day working directly with the company's office administrator, training her to run the sequence from the newest estimates backward through the list.
+                </p>
+                <p className="text-white/80 leading-relaxed">
+                  In 30 days, the local garage door company generated nearly <strong className="text-[#FF7900]">$52,000 in new revenue</strong>, all recovered from quotes already sitting in the pipeline. No new leads. No new ad spend.
+                </p>
+              </div>
             </div>
 
-            <div
-              className="rounded-2xl overflow-hidden fade-up"
-              style={{
-                backgroundImage: `url(https://d2xsxph8kpxj0f.cloudfront.net/106943050/ckBSY4wLs96BZ2LvuKj6yL/sos-ontrac-result-jq8F8FUdFZMW4nZrGodLHc.webp)`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                minHeight: 360,
-                border: "1px solid rgba(255,121,0,0.2)",
-              }}
-            />
+            <div className="space-y-6">
+              <div className="relative overflow-hidden border border-[#4682B4]/30 bg-[#1C1E24] p-7 fade-up blueprint-grid sm:p-9">
+                <div className="absolute right-0 top-0 h-16 w-16 border-r-2 border-t-2 border-[#FF7900]/75" />
+                <div className="section-label mb-4">The Build</div>
+                <h3 className="mb-6 text-white">Specific Timing. Specific Scripts. Three Channels.</h3>
+                <div className="grid grid-cols-3 gap-3">
+                  {[
+                    { value: "7", label: "Touches" },
+                    { value: "3", label: "Channels" },
+                    { value: "1", label: "Training day" },
+                  ].map((item) => (
+                    <div key={item.label} className="border border-white/8 bg-[#2A2D36] p-4 text-center">
+                      <div className="text-3xl font-black text-[#4682B4]">{item.value}</div>
+                      <div className="mt-1 text-xs font-bold uppercase tracking-[0.1em] text-white/35">{item.label}</div>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-6 flex items-center justify-between gap-2 border-t border-white/8 pt-5 text-xs font-bold uppercase tracking-[0.12em] text-white/45">
+                  <span>Call</span>
+                  <ArrowRight size={14} className="text-[#4682B4]" />
+                  <span>Text</span>
+                  <ArrowRight size={14} className="text-[#4682B4]" />
+                  <span>Email</span>
+                </div>
+                <p className="mt-5 text-sm leading-relaxed text-white/50">
+                  Ryan trained the office administrator to start with the newest estimates and work backward through the 280-plus quote list.
+                </p>
+              </div>
+
+              <div className="border-l-4 border-[#4682B4] bg-[#1C1E24] p-6 fade-up">
+                <div className="section-label mb-3">What homeowners kept saying</div>
+                <p className="text-white/75 italic leading-relaxed">
+                  “Oh, we actually did want to move forward. We just got busy and forgot.”
+                </p>
+                <p className="mt-4 text-sm leading-relaxed text-white/45">
+                  They hadn't rejected the quote. They had simply been waiting for someone to show back up.
+                </p>
+              </div>
+
+              <div className="border border-[#FF7900]/35 bg-[#FF7900]/[0.06] p-6 fade-up">
+                <p className="text-xl font-black text-white">They forgot. Not gone.</p>
+                <p className="mt-2 text-sm text-white/50">Just waiting on someone to show back up.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Quote Revival Campaign */}
+      {/* Case Study 02 — 47 Open Quotes */}
       <section className="py-20">
         <div className="container">
-          <div className="section-label mb-4 fade-up">Quote Revival Campaign</div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div
-              className="rounded-2xl p-12 text-center fade-up"
-              style={{ backgroundColor: "#2A2D36", border: "1px solid rgba(70,130,180,0.2)" }}
-            >
-              <div
-                className="text-9xl font-black mb-3"
-                style={{ color: "#4682B4", letterSpacing: "-0.05em" }}
-              >
-                168
+          <div className="section-label mb-4 fade-up">Case Study 02 · 47 Open Quotes</div>
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
+            <div className="space-y-6">
+              <div className="border border-[#4682B4]/30 bg-[#2A2D36] p-8 fade-up sm:p-10">
+                <div className="type-stat text-[#4682B4]">47</div>
+                <div className="mt-2 text-lg font-bold text-white">Open quotes in a spreadsheet</div>
+                <p className="mt-3 text-sm leading-relaxed text-white/45">
+                  No follow-up process. No system. Just leads going cold while the team stayed heads down on the next job.
+                </p>
+                <div className="mt-7 grid grid-cols-2 gap-3">
+                  <div className="border border-white/8 bg-[#1C1E24] p-4">
+                    <div className="text-3xl font-black text-white">5</div>
+                    <div className="mt-1 text-xs font-bold uppercase tracking-[0.12em] text-white/35">Leads revived</div>
+                  </div>
+                  <div className="border border-white/8 bg-[#1C1E24] p-4">
+                    <div className="text-3xl font-black text-[#FF7900]">2</div>
+                    <div className="mt-1 text-xs font-bold uppercase tracking-[0.12em] text-white/35">Jobs closed</div>
+                  </div>
+                </div>
               </div>
-              <div className="text-white font-bold text-lg mb-2">Stalled Quotes Revived</div>
-              <div className="text-white/40 text-sm">In a Single Weekend</div>
+
+              <div className="border border-white/10 bg-[#17191F] p-6 fade-up">
+                <div className="section-label mb-4">The sequence going forward</div>
+                <div className="grid grid-cols-3 gap-3">
+                  {["Day 3", "Day 7", "Day 14"].map((day, index) => (
+                    <div key={day} className="border border-[#4682B4]/20 bg-[#4682B4]/[0.06] p-3 text-center">
+                      <div className="text-xs font-bold text-[#4682B4]">0{index + 1}</div>
+                      <div className="mt-1 text-sm font-bold text-white">{day}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
 
             <div>
-              <h2 className="text-4xl font-black text-white mb-4 fade-up" style={{ letterSpacing: "-0.03em" }}>
-                Residential Water Filtration
+              <h2 className="mb-6 text-white fade-up">
+                The Team Stopped Guessing. <span style={{ color: "#4682B4" }}>And Started Executing.</span>
               </h2>
-              <p className="text-white/60 leading-relaxed mb-5 fade-up">
-                168 stalled quotes revived in a single weekend. This is the proof of concept
-                for the Quote Revival Campaign inside the Sprint.
-              </p>
-              <p className="text-white/60 leading-relaxed mb-5 fade-up">
-                These weren't new leads. These were quotes that had already gone cold — homeowners
-                who had shown interest and then gone silent. The right follow-up message at the
-                right time brought 168 of them back into active conversations.
-              </p>
-              <div
-                className="p-5 rounded-xl fade-up"
-                style={{ backgroundColor: "rgba(70,130,180,0.08)", border: "1px solid rgba(70,130,180,0.2)" }}
-              >
-                <p className="text-white/70 text-sm leading-relaxed italic">
-                  "The revenue was already in the pipeline. It just needed a system to capture it."
+              <div className="space-y-5 fade-up">
+                <p className="text-white/60 leading-relaxed">
+                  At the start of a 30-day Sprint Session, this contractor had 47 open quotes sitting in a spreadsheet with no follow-up process behind them. SOS built one thing first: a revival campaign with simple scripts, a clear sequence, and a way to track what happened after every touch.
+                </p>
+                <p className="text-white/60 leading-relaxed">
+                  Five leads came back to life. Two became closed jobs. Then the team built the next layer: a follow-up sequence for every new quote going forward—Day 3, Day 7, and Day 14 if nothing moved.
+                </p>
+                <p className="text-white/80 leading-relaxed">
+                  The team stopped guessing and started executing. On the final call, the contractor described exactly what had changed:
                 </p>
               </div>
+
+              <div className="mt-7 space-y-3 fade-up">
+                {[
+                  "I finally feel organized in our follow up, knowing where every customer's at.",
+                  "Our closing rate over the last month or two has gone up since we've been pre-qualifying and doing better follow-up.",
+                  "I've actually used your script, man, the one you wrote almost word for word. That helped.",
+                ].map((quote) => (
+                  <blockquote key={quote} className="border-l-2 border-[#4682B4] bg-[#2A2D36] px-5 py-4 text-sm italic leading-relaxed text-white/75">
+                    “{quote}”
+                  </blockquote>
+                ))}
+              </div>
+
+              <div className="mt-7 flex gap-3 border border-white/10 bg-[#17191F] p-6 fade-up">
+                <CheckCircle2 className="mt-0.5 shrink-0 text-[#FF7900]" size={20} />
+                <p className="text-sm leading-relaxed text-white/65">
+                  You do not need more leads. You need a system that makes sure the ones you already have do not die in a spreadsheet. If your quotes are piling up with no process behind them, that is fixable in 30 days.
+                </p>
+              </div>
+
+              <p className="mt-6 text-xl font-black leading-tight text-white fade-up">
+                What would it be worth to your business if every quote got the follow-up it deserved?
+              </p>
             </div>
           </div>
         </div>
@@ -167,8 +240,7 @@ export default function Results() {
             }}
           >
             <div
-              className="text-3xl font-black text-white/10 mb-4 leading-none"
-              style={{ fontFamily: "Georgia, serif", fontSize: 64 }}
+              className="type-stat text-white/10 mb-4 leading-none"
             >
               &ldquo;
             </div>
@@ -267,16 +339,14 @@ export default function Results() {
             Your Results Start Here.
           </h2>
           <p className="text-white/50 text-lg mb-8 max-w-xl mx-auto fade-up">
-            The same system that drove these results is available to you in the 30-Day Sprint.
+            Find out which part of your pipeline is leaking before you spend another dollar chasing new leads.
           </p>
-          <a
-            href="https://coach.ryanjamesmiller.com/offers/zruPZzFM/checkout"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/scorecard"
             className="sos-orange-btn px-10 py-5 rounded text-base font-bold inline-flex items-center gap-2 fade-up"
           >
-            Start the Sprint — $997 <ArrowRight size={18} />
-          </a>
+            Get My Full Capture Score <ArrowRight size={18} />
+          </Link>
         </div>
       </section>
 

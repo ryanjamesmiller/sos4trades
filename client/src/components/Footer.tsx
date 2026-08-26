@@ -11,18 +11,20 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="mb-4">
-              <span
-                className="text-3xl font-black tracking-tight block"
-                style={{ color: "#4682B4", fontFamily: "'DM Sans', sans-serif", letterSpacing: "-0.03em" }}
-              >
-                SOS
-              </span>
-              <span
-                className="text-xs font-semibold tracking-[0.2em] uppercase"
-                style={{ color: "#CBBFAD" }}
-              >
-                Contractors & Trades
-              </span>
+              <div>
+                <span
+                  className="text-3xl font-black tracking-tight block"
+                  style={{ color: "#4682B4", fontFamily: "'DM Sans', sans-serif", letterSpacing: "-0.03em" }}
+                >
+                  SOS
+                </span>
+                <span
+                  className="text-xs font-semibold tracking-[0.2em] uppercase"
+                  style={{ color: "#CBBFAD" }}
+                >
+                  Contractors & Trades
+                </span>
+              </div>
             </div>
             <p className="text-white/50 text-sm leading-relaxed max-w-xs">
               Structure. Optimize. Scale. The Sales Operating System built for trades and specialty contractors.
@@ -38,10 +40,9 @@ export default function Footer() {
             <ul className="space-y-3">
               {[
                 { href: "/", label: "Home" },
-                { href: "/sprint", label: "30-Day Sprint" },
                 { href: "/about", label: "About Ryan" },
                 { href: "/results", label: "Results" },
-                { href: "/community", label: "Community" },
+                { href: "/scorecard", label: "Full Capture Scorecard" },
                 { href: "/resources", label: "Resources" },
               ].map((link) => (
                 <li key={link.href}>
@@ -58,15 +59,15 @@ export default function Footer() {
 
           {/* CTA */}
           <div>
-            <h4 className="text-white font-semibold text-sm mb-5 tracking-wide">Ready to Build Your System?</h4>
+            <h4 className="text-white font-semibold text-sm mb-5 tracking-wide">Where Is Revenue Leaking?</h4>
             <p className="text-white/50 text-sm mb-5 leading-relaxed">
-              Turn stalled quotes into booked jobs in 30 days — without more leads or ads.
+              Find the first gap to close before you spend another dollar chasing new leads.
             </p>
             <Link
-              href="/sprint"
+              href="/scorecard"
               className="sos-orange-btn inline-block px-6 py-3 rounded text-sm font-bold"
             >
-              Start the Sprint — $997
+              Take the Scorecard
             </Link>
             <div className="mt-6">
               <p className="text-white/40 text-xs mb-2">Free starting point:</p>
