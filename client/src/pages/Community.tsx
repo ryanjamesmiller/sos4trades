@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ArrowRight, CheckCircle2, Users, Calendar, Trophy, Star } from "lucide-react";
+import { Link } from "wouter";
 
 function useScrollReveal() {
   useEffect(() => {
@@ -92,12 +93,11 @@ export default function Community() {
         <div className="container max-w-3xl mx-auto text-center">
           <div className="section-label mb-4 fade-up">The Starting Point</div>
           <h2 className="text-4xl font-black text-white mb-6 fade-up" style={{ letterSpacing: "-0.03em" }}>
-            Not Ready for the Sprint Yet? Start Here.
+            Build the Pipeline. Then Find the Leak.
           </h2>
           <p className="text-white/60 text-lg leading-relaxed mb-8 fade-up">
-            The Pipeline Builders Network is where you land when you're not yet ready for the Sprint —
-            and where you get warmed up until you are. It's the entry point to the full SOS CTE ecosystem.
-            Free to join. No discovery call. No pitch. Just the work.
+            The Pipeline Builders Network gives you the frameworks and community. The Full Capture
+            Scorecard gives you a direct read on where revenue is leaking right now. Both are free.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center fade-up">
             <a
@@ -108,14 +108,12 @@ export default function Community() {
             >
               Join Free <ArrowRight size={16} />
             </a>
-            <a
-              href="https://coach.ryanjamesmiller.com/offers/zruPZzFM/checkout"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/scorecard"
               className="sos-ghost-btn px-8 py-4 rounded text-sm font-semibold inline-flex items-center gap-2"
             >
-              Skip Ahead — Start the Sprint
-            </a>
+              Take the Full Capture Scorecard
+            </Link>
           </div>
         </div>
       </section>

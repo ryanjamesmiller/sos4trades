@@ -84,7 +84,7 @@ export default function Home() {
       <section
         className="relative min-h-screen flex items-center overflow-hidden"
         style={{
-          backgroundImage: `url(https://d2xsxph8kpxj0f.cloudfront.net/106943050/ckBSY4wLs96BZ2LvuKj6yL/jRpX3Zho2UUX_5b167da8.jpg)`,
+          backgroundImage: `url(/assets/sos-home-hero.webp)`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -101,12 +101,10 @@ export default function Home() {
             </div>
 
             <h1
-              className="text-5xl md:text-6xl lg:text-7xl font-black mb-6 fade-up text-white leading-[1.05]"
-              style={{ letterSpacing: "-0.03em" }}
+              className="type-hero-title mb-6 fade-up text-white"
             >
               Turn Stalled Quotes Into{" "}
-              <span style={{ color: "#FF7900" }}>Booked Jobs</span>{" "}
-              in 30 Days.
+              <span style={{ color: "#FF7900" }}>Booked Jobs.</span>
             </h1>
 
             <p className="text-lg md:text-xl text-white/70 mb-10 max-w-2xl leading-relaxed fade-up">
@@ -115,15 +113,13 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 fade-up">
-              <a
-                href="https://coach.ryanjamesmiller.com/offers/zruPZzFM/checkout"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/scorecard"
                 className="sos-orange-btn px-8 py-4 rounded text-base font-bold flex items-center justify-center gap-2"
               >
-                Start the 30-Day Sprint — $997
+                Take the Full Capture Scorecard
                 <ArrowRight size={18} />
-              </a>
+              </Link>
 
             </div>
 
@@ -192,7 +188,7 @@ export default function Home() {
       <section
         className="py-24 relative overflow-hidden"
         style={{
-          backgroundImage: `url(https://d2xsxph8kpxj0f.cloudfront.net/106943050/ckBSY4wLs96BZ2LvuKj6yL/sos-journey-bg-YHQC94ZyY9NHamzQkXzpF6.webp)`,
+          backgroundImage: `url(/assets/sos-journey.webp)`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -362,7 +358,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {/* Consulting Success Story */}
+            {/* Local Garage Door Company */}
             <div
               className="rounded-2xl overflow-hidden fade-up"
               style={{ border: "1px solid rgba(255,121,0,0.2)" }}
@@ -370,31 +366,36 @@ export default function Home() {
               <div
                 className="relative h-52 flex items-center justify-center overflow-hidden"
                 style={{
-                  backgroundImage: `url(https://d2xsxph8kpxj0f.cloudfront.net/106943050/ckBSY4wLs96BZ2LvuKj6yL/sos-ontrac-result-jq8F8FUdFZMW4nZrGodLHc.webp)`,
+                  backgroundImage: `url(/assets/sos-proof.webp)`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
               >
                 <div className="absolute inset-0 bg-[#1C1E24]/60" />
+                <div className="relative grid w-full grid-cols-3 px-6 text-center">
+                  <div>
+                    <div className="text-2xl font-black text-white">280+</div>
+                    <div className="mt-1 text-xs font-bold uppercase tracking-[0.1em] text-white/45">Dead quotes</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-black text-[#FF7900]">$52K</div>
+                    <div className="mt-1 text-xs font-bold uppercase tracking-[0.1em] text-white/45">Recovered</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-black text-white">30</div>
+                    <div className="mt-1 text-xs font-bold uppercase tracking-[0.1em] text-white/45">Days</div>
+                  </div>
+                </div>
               </div>
               <div className="p-8" style={{ backgroundColor: "#2A2D36" }}>
-                <div className="section-label mb-3">Consulting Success Story</div>
+                <div className="section-label mb-3">Quote Recovery Case Study</div>
                 <h3 className="text-2xl font-black text-white mb-2">Local Garage Door Company</h3>
-                <div className="flex items-baseline gap-3 mb-4">
-                  <span className="text-white/40 text-sm line-through">$40K</span>
-                  <ArrowRight size={14} style={{ color: "#FF7900" }} />
-                  <span
-                    className="text-3xl font-black"
-                    style={{ color: "#FF7900" }}
-                  >
-                    $1.4M
-                  </span>
-                  <span className="text-white/50 text-sm">in profit growth</span>
-                </div>
                 <p className="text-white/60 text-sm leading-relaxed mb-5">
-                  A garage door company that was doing $40K in profit implemented the SOS framework
-                  and grew to $1.4M. This is the standard everything else is measured against.
+                  More than 280 dead quotes were sitting untouched. SOS installed a seven-touch follow-up sequence across call, text, and email. The company recovered nearly $52,000 in 30 days—without new leads or new ad spend.
                 </p>
+                <div className="mb-5 border-l-2 border-[#FF7900] pl-4 text-sm font-bold text-white/80">
+                  They forgot. Not gone. Just waiting on someone to show back up.
+                </div>
                 <Link
                   href="/results"
                   className="text-[#4682B4] hover:text-[#5a9fd4] text-sm font-semibold flex items-center gap-1 transition-colors"
@@ -404,7 +405,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Quote Revival Campaign */}
+            {/* 47 Open Quotes */}
             <div
               className="rounded-2xl overflow-hidden fade-up"
               style={{ border: "1px solid rgba(70,130,180,0.2)", backgroundColor: "#2A2D36" }}
@@ -413,25 +414,26 @@ export default function Home() {
                 className="h-52 flex items-center justify-center"
                 style={{ backgroundColor: "#1C1E24", borderBottom: "1px solid rgba(70,130,180,0.15)" }}
               >
-                <div className="text-center px-8">
-                  <div
-                    className="text-7xl font-black mb-2"
-                    style={{ color: "#4682B4", letterSpacing: "-0.04em" }}
-                  >
-                    168
+                <div className="grid w-full grid-cols-3 px-6 text-center">
+                  <div>
+                    <div className="text-3xl font-black text-[#4682B4]">47</div>
+                    <div className="mt-1 text-xs font-bold uppercase tracking-[0.1em] text-white/40">Open quotes</div>
                   </div>
-                  <div className="text-white/60 text-sm font-medium tracking-wide">
-                    Stalled Quotes Revived
+                  <div>
+                    <div className="text-3xl font-black text-white">5</div>
+                    <div className="mt-1 text-xs font-bold uppercase tracking-[0.1em] text-white/40">Revived</div>
+                  </div>
+                  <div>
+                    <div className="text-3xl font-black text-[#FF7900]">2</div>
+                    <div className="mt-1 text-xs font-bold uppercase tracking-[0.1em] text-white/40">Closed jobs</div>
                   </div>
                 </div>
               </div>
               <div className="p-8">
                 <div className="section-label mb-3">Quote Revival Campaign</div>
-                <h3 className="text-2xl font-black text-white mb-2">Residential Water Filtration</h3>
+                <h3 className="text-2xl font-black text-white mb-2">47 Open Quotes. No Follow-Up System.</h3>
                 <p className="text-white/60 text-sm leading-relaxed mb-5">
-                  168 stalled quotes revived in a single weekend using the Quote Revival Campaign
-                  inside the Sprint. This is the proof of concept for what's possible when you
-                  have the right follow-up system installed.
+                  A contractor had 47 quotes sitting in a spreadsheet. One revival campaign brought five leads back to life and closed two jobs. Then the team installed a Day 3, Day 7, and Day 14 follow-up sequence for every new quote.
                 </p>
                 <div
                   className="flex items-center gap-3 p-4 rounded-lg"
@@ -439,9 +441,15 @@ export default function Home() {
                 >
                   <CheckCircle2 size={18} style={{ color: "#4682B4", flexShrink: 0 }} />
                   <span className="text-white/70 text-sm">
-                    The revenue was already in the pipeline — it just needed a system to capture it.
+                    “I finally feel organized in our follow up, knowing where every customer's at.”
                   </span>
                 </div>
+                <Link
+                  href="/results"
+                  className="mt-5 flex items-center gap-1 text-sm font-semibold text-[#4682B4] transition-colors hover:text-[#5a9fd4]"
+                >
+                  Read the full case study <ArrowRight size={14} />
+                </Link>
               </div>
             </div>
           </div>
@@ -485,7 +493,7 @@ export default function Home() {
               </a>
             </div>
 
-            {/* Sprint — Featured */}
+            {/* Scorecard — Featured */}
             <div
               className="p-8 rounded-2xl fade-up flex flex-col relative"
               style={{
@@ -498,23 +506,22 @@ export default function Home() {
                 className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-bold tracking-wide"
                 style={{ backgroundColor: "#FF7900", color: "#fff" }}
               >
-                PRIMARY OFFER
+                START HERE
               </div>
               <div className="section-label mb-3" style={{ color: "#FF7900" }}>
-                30-Day Sprint
+                Free Pipeline Diagnostic
               </div>
-              <h3 className="text-xl font-black text-white mb-3">SOS Quote Conversion Sprint</h3>
+              <h3 className="text-xl font-black text-white mb-3">Full Capture Scorecard</h3>
               <p className="text-white/60 text-sm leading-relaxed mb-4 flex-1">
-                Done-with-you. 2 private 1:1 implementation calls. Full system installation.
-                Scripts, templates, automations. Direct access to Ryan for 30 days.
-                Satisfaction guarantee.
+                Twelve direct questions. About four minutes. Three category scores that show
+                exactly where revenue is leaking and which system gap to close first.
               </p>
               <ul className="space-y-2 mb-6">
                 {[
-                  "Week 1: Pipeline & Quote Clarity",
-                  "Week 2: Follow-Up Engine Installed",
-                  "Week 3: Scripts & Objection Handling",
-                  "Week 4: Lock It In & Optimize",
+                  "Total Visibility score",
+                  "Zero Cold Quotes score",
+                  "System Handoff score",
+                  "Personalized first move",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-2 text-sm text-white/60">
                     <CheckCircle2 size={14} style={{ color: "#FF7900", flexShrink: 0, marginTop: 2 }} />
@@ -522,15 +529,13 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-              <div className="text-3xl font-black text-white mb-6">$997</div>
-              <a
-                href="https://coach.ryanjamesmiller.com/offers/zruPZzFM/checkout"
-                target="_blank"
-                rel="noopener noreferrer"
+              <div className="text-3xl font-black text-white mb-6">Free</div>
+              <Link
+                href="/scorecard"
                 className="sos-orange-btn px-6 py-3.5 rounded text-sm font-bold text-center block"
               >
-                Start the Sprint Now
-              </a>
+                Get My Full Capture Score
+              </Link>
             </div>
 
             {/* 1:1 Consulting */}
@@ -641,7 +646,7 @@ export default function Home() {
               }}
             >
               <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/106943050/ckBSY4wLs96BZ2LvuKj6yL/55611B66-D6EE-445E-B076-CA5A354237D1_502687a4.jpeg"
+                src="/assets/ryan-miller-headshot.jpg"
                 alt="Ryan James Miller"
                 className="w-full h-full object-cover object-top"
                 style={{ minHeight: 480 }}
@@ -700,28 +705,24 @@ export default function Home() {
         />
         <div className="container relative z-10 text-center">
           <div className="section-label mb-6 fade-up">Ready to Build Your System?</div>
-          <h2
-            className="text-4xl md:text-6xl font-black text-white mb-6 fade-up"
-            style={{ letterSpacing: "-0.03em" }}
-          >
+            <h2
+              className="type-section-title text-white mb-6 fade-up"
+            >
             Stop Watching Quotes Go Cold.
             <br />
             <span style={{ color: "#FF7900" }}>Start Closing.</span>
           </h2>
           <p className="text-white/60 text-lg max-w-xl mx-auto mb-10 fade-up">
-            Turn stalled quotes into booked jobs in 30 days — without more leads or ads.
-            Done-with-you. Satisfaction guaranteed.
+            Find out in four minutes where your revenue is leaking and which system gap to close first.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center fade-up">
-            <a
-              href="https://coach.ryanjamesmiller.com/offers/zruPZzFM/checkout"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/scorecard"
               className="sos-orange-btn px-10 py-5 rounded text-base font-bold flex items-center justify-center gap-2"
             >
-              Start the 30-Day Sprint — $997
+              Get My Full Capture Score
               <ArrowRight size={18} />
-            </a>
+            </Link>
 
           </div>
         </div>
