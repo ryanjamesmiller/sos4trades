@@ -470,29 +470,6 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Free Community */}
-            <div
-              className="p-8 rounded-2xl fade-up flex flex-col"
-              style={{ backgroundColor: "#2A2D36", border: "1px solid rgba(255,255,255,0.06)" }}
-            >
-              <div className="section-label mb-3">Free Entry Point</div>
-              <h3 className="text-xl font-black text-white mb-3">Pipeline Builders Network</h3>
-              <p className="text-white/50 text-sm leading-relaxed mb-6 flex-1">
-                A private Skool community for contractor and trades owners actively building their
-                sales pipeline using the SOS framework. Weekly frameworks, monthly live calls,
-                win-sharing threads.
-              </p>
-              <div className="text-2xl font-black text-white mb-6">Free</div>
-              <a
-                href="https://www.skool.com/sos-pipeline-builders-network"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="sos-ghost-btn px-6 py-3 rounded text-sm font-bold text-center block"
-              >
-                Join the Community
-              </a>
-            </div>
-
             {/* Scorecard — Featured */}
             <div
               className="p-8 rounded-2xl fade-up flex flex-col relative"
@@ -529,7 +506,7 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-              <div className="text-3xl font-black text-white mb-6">Free</div>
+              <div className="mb-6 text-sm font-bold uppercase tracking-[0.12em] text-white/45">Free · About 4 minutes</div>
               <Link
                 href="/scorecard"
                 className="sos-orange-btn px-6 py-3.5 rounded text-sm font-bold text-center block"
@@ -538,13 +515,50 @@ export default function Home() {
               </Link>
             </div>
 
-            {/* 1:1 Consulting */}
+            {/* Pipeline Power System */}
+            <div
+              className="p-8 rounded-2xl fade-up flex flex-col"
+              style={{ backgroundColor: "#2A2D36", border: "1px solid rgba(70,130,180,0.3)" }}
+            >
+              <div className="section-label mb-3">Cohort Implementation</div>
+              <h3 className="text-xl font-black text-white mb-3">Pipeline Power System</h3>
+              <p className="text-white/50 text-sm leading-relaxed mb-4">
+                A guided cohort for contractors ready to install the operating system behind a visible,
+                followed-up, owner-independent sales pipeline.
+              </p>
+              <ul className="space-y-2 mb-6 flex-1">
+                {[
+                  "Pipeline stages and visibility",
+                  "Quote revival and follow-up cadence",
+                  "Scripts, tracking, and accountability",
+                  "Team implementation rhythm",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2 text-sm text-white/60">
+                    <CheckCircle2 size={14} style={{ color: "#4682B4", flexShrink: 0, marginTop: 2 }} />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <p className="mb-3 text-center text-xs font-bold uppercase tracking-[0.14em] text-[#4682B4]">
+                Next Cohort Launching Soon
+              </p>
+              <a
+                href="https://calendly.com/ryanjamesmiller/sos-discovery-call"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="sos-ghost-btn px-6 py-3 rounded text-sm font-bold text-center block"
+              >
+                Book a Call
+              </a>
+            </div>
+
+            {/* SOS Scale */}
             <div
               className="p-8 rounded-2xl fade-up flex flex-col"
               style={{ backgroundColor: "#2A2D36", border: "1px solid rgba(70,130,180,0.2)" }}
             >
               <div className="section-label mb-3">Flagship Offer</div>
-              <h3 className="text-xl font-black text-white mb-3">SOS CTE 1:1 Consulting</h3>
+              <h3 className="text-xl font-black text-white mb-3">SOS Scale</h3>
               <p className="text-white/50 text-sm leading-relaxed mb-6 flex-1">
                 For established trades businesses ($1M+) with existing teams who are ready to
                 build a world-class sales engine. 90-day done-with-you engagement. Full SOS
