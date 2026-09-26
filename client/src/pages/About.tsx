@@ -47,6 +47,12 @@ export default function About() {
               who built the SOS framework from the ground up — specifically for trades and
               specialty contractors. Not adapted from a corporate model. Built for the job site.
             </p>
+            <p className="text-base text-white/50 leading-relaxed fade-up mt-4">
+              The whole story, the book and the podcast live at{" "}
+              <a href="https://ryanjamesmiller.com/about/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-white">ryanjamesmiller.com</a>.
+              Want Ryan in front of your crew or your trade group?{" "}
+              <a href="https://ryanjamesmiller.com/speaking/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-white">The talks are here</a>.
+            </p>
           </div>
         </div>
       </section>

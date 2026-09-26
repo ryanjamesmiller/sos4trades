@@ -89,7 +89,10 @@ export default function Footer() {
             © {new Date( ).getFullYear()} SOS — Sales Operating System. All rights reserved.
           </p>
           <p className="text-white/20 text-xs">
-            Ryan James Miller · Faith-Driven Sales Strategist
+            Founded by{" "}
+            <a href="https://ryanjamesmiller.com/about/" target="_blank" rel="noopener noreferrer" className="hover:text-white/60 transition-colors underline underline-offset-2">
+              Ryan James Miller
+            </a>
           </p>
         </div>
       </div>
