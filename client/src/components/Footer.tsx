@@ -85,7 +85,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-white/30 text-xs">
+          <p className="text-white/30 text-xs" suppressHydrationWarning>
             © {new Date( ).getFullYear()} SOS — Sales Operating System. All rights reserved.
           </p>
           <p className="text-white/20 text-xs">
