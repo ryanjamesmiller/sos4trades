@@ -179,6 +179,11 @@ export default function Scorecard() {
     data.append("q11_q11_textbox9", answers.map((answer) => answer ?? "-").join(","));
     data.append("q12_q12_textbox10", arrival.source);
     data.append("q13_q13_textbox11", arrival.campaign);
+    // Count the lead in Google Analytics, credited to the channel link the visitor arrived on.
+    (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag?.("event", "generate_lead", {
+      form_name: "full_capture_scorecard",
+      overall_score: overallScore,
+    });
     // Results show either way; a failed save must never block the owner from his score.
     return fetch(RESULTS_FORM_URL, { method: "POST", mode: "no-cors", body: data }).catch(() => undefined);
   }
