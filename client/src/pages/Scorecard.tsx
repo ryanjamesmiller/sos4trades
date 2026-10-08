@@ -681,7 +681,7 @@ function Results({
                 <p className="section-label">Straight answer</p>
                 <h2 className="mt-3 text-3xl font-black text-white">Walk through your score with Ryan.</h2>
                 <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/50">
-                  In 20 minutes, we'll look at the three scores together and show you the fastest way to close the biggest gap first.
+                  In 30 minutes, we'll look at the three scores together and show you the fastest way to close the biggest gap first.
                 </p>
               </div>
               <a
