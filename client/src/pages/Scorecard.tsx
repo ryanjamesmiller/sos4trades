@@ -3,7 +3,7 @@
    Exact SOS CTE shell: graphite, steel blue, orange signal CTAs,
    blueprint linework, DM Sans, and asymmetric industrial layouts.
    ============================================================= */
-import { useEffect, useMemo, useState } from "react";
+import { type FormEvent, useEffect, useMemo, useState } from "react";
 import {
   ArrowLeft,
   ArrowRight,
@@ -18,7 +18,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const HERO_IMAGE = "/assets/sos-scorecard-hero.webp";
-const SCORECARD_MARK = "/assets/sos-scorecard-mark.svg";
+const SCORECARD_MARK = "/assets/sos-scorecard-mark.png";
 
 const SECTIONS = [
   {
@@ -79,10 +79,35 @@ const LEAKS = [
   },
 ] as const;
 
-type Screen = "landing" | "gate" | "quiz" | "results";
+type Screen = "landing" | "quiz" | "capture" | "results";
+
+// Each finished scorecard is saved to the Jotform "Full Capture Scorecard - Results" form (10/07/26).
+const RESULTS_FORM_ID = "262798199132066";
+const RESULTS_FORM_URL = `https://submit.jotform.com/submit/${RESULTS_FORM_ID}`;
 
 function hasUnlockParameter() {
   return typeof window !== "undefined" && new URLSearchParams(window.location.search).get("unlocked") === "1";
+}
+
+// Remember the channel link (utm_*) a visitor arrived on, so the saved result says where they came from.
+function readSource() {
+  const keys = ["utm_source", "utm_medium", "utm_campaign"] as const;
+  const params = new URLSearchParams(window.location.search);
+  const source: Record<string, string> = {};
+  for (const key of keys) {
+    let value = params.get(key) ?? "";
+    try {
+      if (value) sessionStorage.setItem(key, value);
+      else value = sessionStorage.getItem(key) ?? "";
+    } catch {
+      /* storage blocked: use what the URL gave us */
+    }
+    source[key] = value;
+  }
+  return {
+    source: [source.utm_source, source.utm_medium].filter(Boolean).join(" / ") || "direct",
+    campaign: source.utm_campaign,
+  };
 }
 
 function scorePercent(sum: number) {
@@ -103,6 +128,7 @@ export default function Scorecard() {
   const [screen, setScreen] = useState<Screen>(() => (hasUnlockParameter() ? "quiz" : "landing"));
   const [questionIndex, setQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState<Array<number | null>>(() => new Array(QUESTIONS.length).fill(null));
+  const [arrival] = useState(readSource);
 
   useEffect(() => {
     document.title = "Full Capture Scorecard | SOS Contractors & Trades";
@@ -132,8 +158,29 @@ export default function Scorecard() {
   const overallScore = Math.round(sectionScores.reduce((sum, score) => sum + score, 0) / sectionScores.length);
   const weakestSection = sectionScores.indexOf(Math.min(...sectionScores));
 
-  function openGate() {
-    setScreen("gate");
+  function startQuiz() {
+    setScreen("quiz");
+  }
+
+  function saveResult(contact: Contact) {
+    const data = new FormData();
+    data.append("formID", RESULTS_FORM_ID);
+    data.append("simple_spc", `${RESULTS_FORM_ID}-${RESULTS_FORM_ID}`);
+    data.append("website", "");
+    data.append("q2_q2_textbox0", contact.name);
+    data.append("q3_q3_email1", contact.email);
+    data.append("q4_q4_textbox2", contact.company);
+    data.append("q5_q5_textbox3", contact.phone);
+    data.append("q6_q6_textbox4", String(overallScore));
+    data.append("q7_q7_textbox5", String(sectionScores[0]));
+    data.append("q8_q8_textbox6", String(sectionScores[1]));
+    data.append("q9_q9_textbox7", String(sectionScores[2]));
+    data.append("q10_q10_textbox8", SECTIONS[weakestSection].name);
+    data.append("q11_q11_textbox9", answers.map((answer) => answer ?? "-").join(","));
+    data.append("q12_q12_textbox10", arrival.source);
+    data.append("q13_q13_textbox11", arrival.campaign);
+    // Results show either way; a failed save must never block the owner from his score.
+    return fetch(RESULTS_FORM_URL, { method: "POST", mode: "no-cors", body: data }).catch(() => undefined);
   }
 
   function selectAnswer(value: number) {
@@ -145,7 +192,7 @@ export default function Scorecard() {
       if (questionIndex < QUESTIONS.length - 1) {
         setQuestionIndex((current) => current + 1);
       } else {
-        setScreen("results");
+        setScreen("capture");
       }
     }, 140);
   }
@@ -160,14 +207,22 @@ export default function Scorecard() {
     <div className="min-h-screen bg-[#1C1E24] text-[#F5F7F8]">
       <Navbar />
       <main>
-        {screen === "landing" && <LandingPage onStart={openGate} />}
-        {screen === "gate" && <EmailGate onBack={() => setScreen("landing")} />}
+        {screen === "landing" && <LandingPage onStart={startQuiz} />}
         {screen === "quiz" && (
           <Quiz
             questionIndex={questionIndex}
             answers={answers}
             onAnswer={selectAnswer}
             onBack={() => setQuestionIndex((current) => Math.max(0, current - 1))}
+          />
+        )}
+        {screen === "capture" && (
+          <ContactCapture
+            onBack={() => setScreen("quiz")}
+            onSubmit={async (contact) => {
+              await saveResult(contact);
+              setScreen("results");
+            }}
           />
         )}
         {screen === "results" && (
@@ -335,13 +390,36 @@ function LandingPage({ onStart }: { onStart: () => void }) {
   );
 }
 
-function EmailGate({ onBack }: { onBack: () => void }) {
+type Contact = { name: string; email: string; company: string; phone: string };
+
+function ContactCapture({ onBack, onSubmit }: { onBack: () => void; onSubmit: (contact: Contact) => Promise<void> }) {
+  const [contact, setContact] = useState<Contact>({ name: "", email: "", company: "", phone: "" });
+  const [saving, setSaving] = useState(false);
+  const fields: Array<{ key: keyof Contact; label: string; type: string; required: boolean; autoComplete: string }> = [
+    { key: "name", label: "Your name", type: "text", required: true, autoComplete: "name" },
+    { key: "email", label: "Email", type: "email", required: true, autoComplete: "email" },
+    { key: "company", label: "Company", type: "text", required: true, autoComplete: "organization" },
+    { key: "phone", label: "Phone (optional)", type: "tel", required: false, autoComplete: "tel" },
+  ];
+
+  async function submit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (saving) return;
+    setSaving(true);
+    await onSubmit({
+      name: contact.name.trim(),
+      email: contact.email.trim(),
+      company: contact.company.trim(),
+      phone: contact.phone.trim(),
+    });
+  }
+
   return (
     <section className="min-h-[calc(100vh-80px)] bg-[#1C1E24] pb-20 pt-28 blueprint-grid md:pt-36">
       <div className="container">
         <div className="mx-auto max-w-5xl">
           <button onClick={onBack} className="mb-8 inline-flex items-center gap-2 text-sm font-semibold text-white/45 transition hover:text-white">
-            <ArrowLeft size={16} /> Back to scorecard overview
+            <ArrowLeft size={16} /> Back to the questions
           </button>
 
           <div className="grid overflow-hidden border border-white/10 bg-[#17191F] shadow-2xl shadow-black/30 lg:grid-cols-[0.82fr_1.18fr]">
@@ -349,10 +427,10 @@ function EmailGate({ onBack }: { onBack: () => void }) {
               <div className="absolute inset-0 opacity-30 blueprint-grid" />
               <div className="relative">
                 <BrandMark className="h-14 w-14" />
-                <p className="section-label mt-7">Email unlock · Step 01</p>
-                <h1 className="type-subsection-title mt-4 text-white">Where should we send your results?</h1>
+                <p className="section-label mt-7">Diagnostic complete · 12 / 12</p>
+                <h1 className="type-subsection-title mt-4 text-white">Your score is ready.</h1>
                 <p className="mt-5 text-base leading-relaxed text-white/55">
-                  Enter your email once. After the redirect, you'll drop directly into question one and your result will appear immediately when you finish.
+                  Tell us where to send it and your results open on the next screen.
                 </p>
                 <div className="mt-8 space-y-4 text-sm text-white/50">
                   <div className="flex gap-3"><Check size={18} className="mt-0.5 shrink-0 text-[#4682B4]" /> Three category scores</div>
@@ -362,25 +440,34 @@ function EmailGate({ onBack }: { onBack: () => void }) {
               </div>
             </div>
 
-            <div className="bg-[#F5F7F8] p-4 text-[#1C1E24] sm:p-7 lg:p-9">
-              <div className="mb-5">
-                <h2 className="type-subsection-title text-[#1C1E24]">Access Your Score</h2>
-                <p className="mt-2 text-sm text-[#41424C]/75">Enter your email address to unlock access.</p>
+            <form onSubmit={submit} className="bg-[#F5F7F8] p-6 text-[#1C1E24] sm:p-8 lg:p-10">
+              <h2 className="type-subsection-title text-[#1C1E24]">See your Full Capture Score</h2>
+              <div className="mt-6 space-y-4">
+                {fields.map((field) => (
+                  <label key={field.key} className="block">
+                    <span className="text-sm font-semibold text-[#41424C]">{field.label}</span>
+                    <input
+                      type={field.type}
+                      required={field.required}
+                      autoComplete={field.autoComplete}
+                      value={contact[field.key]}
+                      onChange={(event) => setContact({ ...contact, [field.key]: event.target.value })}
+                      className="mt-1.5 w-full border border-[#41424C]/20 bg-white px-4 py-3 text-base text-[#1C1E24] outline-none transition focus:border-[#4682B4]"
+                    />
+                  </label>
+                ))}
               </div>
-              <div className="h-[270px] overflow-hidden bg-white sm:h-[285px]">
-                <iframe
-                  id="JotFormIFrame-262376238555061"
-                  title="Access Your Score email form"
-                  src="https://form.jotform.com/262376238555061?isIframeEmbed=1"
-                  className="h-[520px] w-full -translate-y-[194px] border-0 bg-white"
-                  allow="geolocation; microphone; camera; fullscreen; payment"
-                  scrolling="auto"
-                />
-              </div>
+              <button
+                type="submit"
+                disabled={saving}
+                className="sos-orange-btn mt-7 inline-flex w-full items-center justify-center gap-3 rounded px-7 py-4 text-base font-bold disabled:opacity-60"
+              >
+                {saving ? "Opening your score..." : "Show My Score"} <ArrowRight size={18} />
+              </button>
               <p className="mt-4 text-xs leading-relaxed text-[#41424C]/70">
                 No spam. Just your score and, if there's a real gap, a straight answer on the fastest way to close it.
               </p>
-            </div>
+            </form>
           </div>
         </div>
       </div>
