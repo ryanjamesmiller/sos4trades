@@ -83,6 +83,28 @@ export default function Resources() {
         </div>
       </section>
 
+      {/* Featured free tool */}
+      <section className="px-4 pt-14">
+        <div className="max-w-5xl mx-auto grid gap-6 border border-white/10 p-7 md:p-9 lg:grid-cols-[1fr_auto] lg:items-center" style={{ backgroundColor: "#17191F" }}>
+          <div>
+            <p className="text-xs font-bold tracking-[0.2em] uppercase mb-3" style={{ color: "#4682B4" }}>
+              Free Tool
+            </p>
+            <h2 className="text-2xl md:text-3xl font-black text-white" style={{ letterSpacing: "-0.02em" }}>
+              Quote Follow-Up Builder
+            </h2>
+            <p className="mt-3 max-w-2xl text-white/60 leading-relaxed">
+              Enter one open quote and get a dated 7-touch call, text and email sequence written for that customer, ready to copy into your phone or CRM.
+            </p>
+          </div>
+          <Link href="/follow-up-builder">
+            <span className="sos-orange-btn inline-flex cursor-pointer items-center justify-center gap-2 rounded px-7 py-4 text-sm font-bold">
+              Build a Sequence
+            </span>
+          </Link>
+        </div>
+      </section>
+
       {/* Most Recent Videos */}
       <section className="py-14 px-4">
         <div className="max-w-5xl mx-auto">

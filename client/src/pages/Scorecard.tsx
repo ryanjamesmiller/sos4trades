@@ -676,6 +676,24 @@ function Results({
               </div>
             </div>
 
+            <div className="mt-8 grid gap-6 border border-[#4682B4]/40 bg-[#4682B4]/[0.06] p-7 md:p-9 lg:grid-cols-[1fr_auto] lg:items-center">
+              <div>
+                <p className="section-label">Free tool · Use it today</p>
+                <h2 className="mt-3 text-2xl font-extrabold text-white md:text-3xl">
+                  {weakestSection === 1 ? "Start closing the leak on your next open quote." : "Got open quotes sitting right now?"}
+                </h2>
+                <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/55">
+                  Enter one quote and the Quote Follow-Up Builder writes a dated 7-touch call, text and email sequence for that customer in about 30 seconds.
+                </p>
+              </div>
+              <a
+                href="/follow-up-builder"
+                className="inline-flex items-center justify-center gap-3 rounded border border-white/25 px-7 py-4 text-center text-sm font-bold text-white transition hover:border-white"
+              >
+                Build My Follow-Up <ArrowRight size={17} />
+              </a>
+            </div>
+
             <div className="mt-8 grid gap-8 border border-white/10 bg-[#20232B] p-7 md:p-10 lg:grid-cols-[1fr_auto] lg:items-center">
               <div>
                 <p className="section-label">Straight answer</p>
