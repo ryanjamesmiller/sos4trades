@@ -9,7 +9,7 @@ const ROOT = process.cwd();
 const OUT = path.join(ROOT, "dist/public");
 const SSR_OUT = path.join(ROOT, "dist/ssr");
 // Keep in step with the <Route> list in client/src/App.tsx.
-const ROUTES = ["/", "/about", "/results", "/scorecard", "/resources", "/community", "/sprint", "/404"];
+const ROUTES = ["/", "/about", "/results", "/scorecard", "/follow-up-builder", "/resources", "/community", "/sprint", "/404"];
 
 // A real DOM for the render pass: some UI libraries touch document/window at import time.
 import { GlobalRegistrator } from "@happy-dom/global-registrator";

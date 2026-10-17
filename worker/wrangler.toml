@@ -1,0 +1,16 @@
+# SOS Quote Follow-Up Builder API (10/17/26). Deploy: wrangler deploy (from this folder).
+# Secret ANTHROPIC_API_KEY is set in the Cloudflare dashboard (Ryan), never in this file.
+name = "sos-followup-builder"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+compatibility_flags = ["nodejs_compat"]
+account_id = "80c21d1ca05fd34a83fec4e11ab37755"
+workers_dev = true
+
+[vars]
+MODEL = "claude-opus-5-5"
+EFFORT = "low"
+
+[[kv_namespaces]]
+binding = "LIMITS"
+id = "42c7e657adbc410581a2f4d59d3d2dc3"

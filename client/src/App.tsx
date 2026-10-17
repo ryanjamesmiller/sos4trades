@@ -16,6 +16,7 @@ import Community from "./pages/Community";
 import Results from "./pages/Results";
 import Resources from "./pages/Resources";
 import Scorecard from "./pages/Scorecard";
+import FollowUpBuilder from "./pages/FollowUpBuilder";
 
 function Router() {
   return (
@@ -28,6 +29,7 @@ function Router() {
         <Route path="/results" component={Results} />
         <Route path="/resources" component={Resources} />
         <Route path="/scorecard" component={Scorecard} />
+        <Route path="/follow-up-builder" component={FollowUpBuilder} />
         <Route path="/404" component={NotFound} />
         <Route component={NotFound} />
       </Switch>
