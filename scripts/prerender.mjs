@@ -75,6 +75,8 @@ for (const route of ROUTES) {
     page = template.replace("</head>", `<meta http-equiv="refresh" content="0; url=${result.redirectTo}" />\n</head>`);
   } else {
     // data-route tells client/src/main.tsx which path this markup belongs to, so it only hydrates a match.
+    // A route with no META row would ship the home page's title to Google (11/05/26): stop the build instead.
+    if (route !== "/404" && !META[route]) { console.error("no META row for", route, "in scripts/prerender.mjs"); process.exit(1); }
     page = withHead(template, route).replace('<div id="root"></div>', `<div id="root" data-route="${route}">${result.html}</div>`);
   }
   const file = route === "/" ? path.join(OUT, "index.html") : path.join(OUT, route.replace(/^\//, ""), "index.html");
